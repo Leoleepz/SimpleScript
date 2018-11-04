@@ -66,6 +66,8 @@ bool line::contain(std::string x){
 
 bool line::push(std::string x){
 	x = SpaceErase(x);
+	if (x[0] == '#') return false;
+	
 	to_str = x;isret = isRet(x);
 	int i = 0,last = 0;pts = -1;argc = -1;
 	
@@ -88,9 +90,10 @@ bool line::push(std::string x){
 	}
 
 	//for (int i=0;i<=pts;i++) std::cout<<trunc[i]<<' ';
-	//std::cout<<std::endl;
+	//std::cout<<isret<<std::endl;
 	
 	i = 0;if (isret) va = trunc[i++];
+	//std::cout<<va<<std::endl;
 	if (int pos = isCal(trunc[i])){
 		std::string lf = trunc[i].substr(0,pos), \
 					rf = trunc[i].substr(pos+1);
@@ -139,7 +142,7 @@ bool line::push(std::string x){
 }
 	
 std::string line::exec(){
-	//std::cout<<func<<std::endl; 
+	//std::cout<<to_str<<' '<<va<<std::endl; 
 	std::string ag[_maxtr];
 	for (int i=0;i<=argc;i++) ag[i] = argv[i];
 	

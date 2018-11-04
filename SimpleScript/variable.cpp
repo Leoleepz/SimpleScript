@@ -16,10 +16,10 @@ std::string Variable::arrext(std::string x){
 	
 	std::string vr = x.substr(p0+1,p1-p0-1);
 	if (isVari(vr)) {
-		
 		vr = std::to_string(Fetch(vr));
-		x = x.substr(0,p0) + '_' + vr + '_';
+		x = x.substr(0,p0) + '_' + vr + '_'; 
 	}
+	//std::cout<<x<<std::endl;
 	return x;
 }
 
@@ -48,6 +48,7 @@ void Variable::Clear(std::string x){
 }
 void Variable::Move(std::string x,int mv){
 	x = arrext(x);
+	//std::cout<<"Move "<<x<<std::endl;
 	if (!isVari(x))
 		Push(x,mv);
 	else
