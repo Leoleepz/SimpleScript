@@ -121,7 +121,6 @@ bool line::push(std::string x){
 	}
 	//std::cout<<trunc[i]<<std::endl;
 	if (isNum(trunc[i]) || Variable::isVari(trunc[i])){
-		
 		argc = 1;
 		argv[0] = trunc[i];argv[1] = "0";
 		func = "add";
@@ -142,7 +141,7 @@ bool line::push(std::string x){
 }
 	
 std::string line::exec(){
-	//std::cout<<to_str<<' '<<va<<std::endl; 
+	//std::cout<<"#"<<to_str<<"#"<<std::endl; 
 	std::string ag[_maxtr];
 	for (int i=0;i<=argc;i++) ag[i] = argv[i];
 	

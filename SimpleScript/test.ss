@@ -1,8 +1,4 @@
 for ("i=1","i<11","i=i+1"){
-	a[i] = i;
+	v = i+0;
+	print(v);
 }
-
-for ("i=1","i<11","i=i+1"){
-	println(a[i]);
-}
-
